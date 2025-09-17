@@ -50,6 +50,14 @@ function pintarButacas(){
             if (i%15==0){
                 contenedor.innerHTML+="<br>";
             }
+           
+        }
+         // Calcular el porcentaje de ocupación
+        var ocupacion = (vendidas.length / numButacas) * 100;
+        
+        // Si la ocupación es mayor al 50%, mostrar el mensaje de advertencia
+        if (ocupacion > 50) {
+             contenedor.innerHTML += "<br><br><span style='color:red; font-weight:bold;'> WARNING: Poca disponibilidad, ¡apremie su reserva! </span>";
         }
         if (numButacas==vendidas.length){
             contenedor.innerHTML+="<br><img  src='img/soldout.png' alt='Sin localidades'title='Localidades agotadas. Seleccione otra película.'>"
