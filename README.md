@@ -63,12 +63,17 @@ COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 ```
 
 ### 🧱 4. Construir la imagen Docker
+Con este comando se construye la imagen a partir del Dockerfile en el directorio actual (.)
+El parámetro -t asigna el nombre "cine-nginx" a la imagen para identificarla fácilmente
 
 ```
 docker build -t cine-nginx .
 ```
 
 ### 🚀 5. Ejecutar el contenedor
+Con este comando se crea y ejecuta un contenedor en segundo plano (-d)
+Se expone el puerto 80 del contenedor al puerto 8080 de tu máquina (puedes cambiarlo si está ocupado)
+Finalmente, se indica que el contenedor se base en la imagen "cine-nginx" creada antes
 
 ```
 docker run -d -p 8080:80 cine-nginx (o el puerto libre del que dispongas)
